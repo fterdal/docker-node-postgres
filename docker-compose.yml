@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web:
+    build: .
+    image: finnterdal/node-postgres
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=fruit_store
+      - POSTGRES_HOST_AUTH_METHOD=trust
