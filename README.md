@@ -11,3 +11,7 @@ to connect to the database once the container is running:
 Find the row for postgres, and:
 
 `docker exec -it <CONTAINER ID> psql -U postgres`
+
+This should also work:
+
+`docker exec -it docker-node-postgres_db_1 psql -U postgres`

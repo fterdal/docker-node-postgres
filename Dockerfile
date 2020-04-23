@@ -3,7 +3,8 @@ FROM node:12
 
 COPY . .
 
-RUN npm install
+# RUN npm install
+RUN npm ci
 
 EXPOSE 8080
 
