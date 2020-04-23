@@ -2,19 +2,23 @@ const express = require("express");
 const morgan = require("morgan");
 const { Client } = require("pg");
 
-const db = new Client();
+const db = new Client({
+  host: "db",
+  database: "fruit_store",
+  user: "postgres",
+});
 
 const app = express();
 app.use(morgan("dev"));
 
 app.get("/", async (req, res, next) => {
-  const apples = db.query("SELECT * FROM apples");
+  const { rows: apples } = await db.query("SELECT * FROM apples");
   console.log(apples);
   res.send(`
     <div>
       <h1>It is alive! 🧟‍♂️ ⚡️</h1>
       <ul>
-        apples go here...
+        ${apples.map((apple) => `<li>${apple.name}</li>`).join("")}
       </ul>
     </div>
   `);
