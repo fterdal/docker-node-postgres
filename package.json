@@ -1,10 +1,10 @@
 {
-  "name": "node-postgres",
+  "name": "docker-node-postgres",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server"
+    "start": "node server"
   },
   "keywords": [],
   "author": "",
