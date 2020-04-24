@@ -22,7 +22,7 @@ app.get("/", async (req, res, next) => {
   console.log(apples);
   res.send(`
     <div>
-      <h1>It is alive! 🧟‍♂️ ⚡️</h1>
+      <h1>It is NOT alive! 🧟‍♂️ ⚡️</h1>
       <form action="/" method="POST">
         <input name="fruitname" type="text" placeholder="fruit name">
         <button type="submit">Submit</button>
